@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type= "text/css" href={{url_for('static',filename='predictor.css')}}>
+
+    <title>Crop Recomendation</title>
+</head>
+<body>
+    <section id="prediction-form">
+        <form class="form" action="/predict", method="POST">
+            <h1 class="my-3 text-center"><b><u>CROP RECOMMENDER</u></b></h1>
+            <div class="row">
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="state" class="state">State</label>
+                        
+                        <select class="state" id="state" name="state" aria-label="State">
+                        <option selected value="-1">Select state</option>
+                        <option value= 0>Andhra Pradesh</option>
+                        <option value= 1>Arunachal Pradesh</option>
+                        <option value= 2>Assam</option>
+                        <option value= 3>Bihar</option>
+                        <option value= 4>Chhattisgarh</option>
+                        <option value= 5>Delhi</option>
+                        <option value= 6>Goa</option>
+                        <option value= 7>Gujarat</option>
+                        <option value= 8>Haryana</option>
+                        <option value= 9>Himachal Pradesh</option>
+                        <option value= 10>Jammu and kashmir</option>
+                        <option value= 11>Jharkhand</option>
+                        <option value= 12>Karnataka</option>
+                        <option value= 13>Kerala</option>
+                        <option value= 14>Madhya Pradesh</option>
+                        <option value= 15>Maharastra</option>
+                        <option value= 16>Manipur</option>
+                        <option value= 17>Meghalaya</option>
+                        <option value= 18>Mizoram</option>
+                        <option value= 19>Nagaland</option>
+                        <option value= 20>Odisha</option>
+                        <option value= 21>Punjab</option>
+                        <option value= 22>Rajasthan</option>
+                        <option value= 23>Sikkim</option>
+                        <option value= 24>Tamil Nadu</option>
+                        <option value= 25>Telangana</option>
+                        <option value= 26>Tripura</option>
+                        <option value= 27>Uttar Pradesh</option>
+                        <option value= 28>Uttarakhand</option>
+                        <option value= 29>West Bengal</option>
+                        </select>
+                     </div>
+                    <div class="md-form">
+                        <label for="city" class="city"> City </label>
+                        <input type="text" class="form-control" id="city" name="city">
+                    </div>
+                </div>
+            <hr class="separate">
+        <label style="text-align: center;" ><b >PRIMARY NUTRIENTS </b></label>
+        
+            
+            <div class="col-md-6 my-2">
+                <div class="md-form">
+                    <label for="N" class="N">Nitrogen Ratio(N) </label>
+                    <input type="text" class="form-control" id="N" name="N" value="1" size="200" >
+                </div>
+            </div>
+            
+            
+            <div class="col-md-6 my-2">
+                <div class="md-form">
+                    <label for="K" class="K">Potassium Ratio(K) </label>
+                    
+                    <input type="text" class="form-control" id="K" name="K" value="1" size="1000px">
+                </div>
+            </div>
+            <div class="col-md-6 my-2">
+                <div class="md-form">
+                    <label for="P" class="P">Phospours Ratio(P) </label>
+                    <input type="text" class="form-control" id="P" name="P" value="1" size="200">
+                </div>
+            </div>
+            <div class="col-md-6 my-2">
+                <div class="md-form">
+                    <label ></label>
+                    
+                </div>
+            </div>
+            
+            <hr class="separate">
+        <label style="text-align: center;"><b>SECONDARY NUTRIENTS</b></label>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="calcium" class="calcium">Calcium </label>
+                        <select class="ca_unit" id="ca_unit" name="ca_unit" aria-label="ca_unit">
+                            <option selected value=0>t/ha</option>
+                            <option value= 1>kg/ha</option>
+                            <option value= 2>kg/ac</option>
+                        </select>
+                        <input type="text" class="form-control" id="calcium" name="calcium" value="1">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="magnesium" class="magnesium">Magnesium </label>
+                        <select class="mg_unit" id="mg_unit" name="mg_unit" aria-label="mg_unit">
+                            <option selected value=0>t/ha</option>
+                            <option value= 1>kg/ha</option>
+                            <option value= 2>kg/ac</option>
+                        </select>
+                        <input type="text" class="form-control" id="magnesium" name="magnesium" value="1">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="sulphur" class="sulphur">Sulphur </label>
+                        <select class="s_unit" id="s_unit" name="s_unit" aria-label="s_unit">
+                            <option selected value=0>t/ha</option>
+                            <option value= 1>kg/ha</option>
+                            <option value= 2>kg/ac</option>
+                        </select>
+                        <input type="text" class="form-control" id="sulphur" name="sulphur" value="1">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label >   </label>
+                        
+                    </div>
+                </div>
+            <hr class="separate">
+        <label style="text-align: center;"><b>MICRO NUTRIENTS</b></label>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="boron" class="boron">Boron </label>
+                        <select class="b_unit" id="b_unit" name="b_unit" aria-label="b_unit">
+                            <option selected value=0>t/ha</option>
+                            <option value= 1>kg/ha</option>
+                            <option value= 2>kg/ac</option>
+                        </select>
+                        <input type="text" class="form-control" id="boron" name="boron" value="1">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="iron" class="iron">Iron </label>
+                        <select class="fe_unit" id="fe_unit" name="fe_unit" aria-label="fe_unit">
+                            <option selected value=0>t/ha</option>
+                            <option value= 1>kg/ha</option>
+                            <option value= 2>kg/ac</option>
+                        </select>
+                        <input type="text" class="form-control" id="iron" name="iron" value="1">
+                    </div>
+                </div>
+                
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="zinc" class="zinc">Zinc</label>
+                        <select class="zn_unit" id="zn_unit" name="zn_unit" aria-label="zn_unit">
+                            <option selected value=0>t/ha</option>
+                            <option value= 1>kg/ha</option>
+                            <option value= 2>kg/ac</option>
+                        </select>
+                        <input type="text" class="form-control" id="zinc" name="zinc" value="1">
+                    </div>
+                </div>
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="magnese" class="magnese">Magnese</label>
+                        <select class="mn_unit" id="mn_unit" name="mn_unit" aria-label="mn_unit">
+                            <option selected value=1>t/ha</option>
+                            <option value= 1>kg/ha</option>
+                            <option value= 2>kg/ac</option>
+                        </select>
+                        <input type="text" class="form-control" id="magnese" name="magnese" value="1">
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="ph" class="ph" name = "ph">PH of soil</label>
+                        <input type="text" class="form-control" id="ph" name="ph" value="7">
+                        
+                    </div>
+                </div>
+           
+            <hr class="separate">
+             
+                <div class="col-md-6 my-2 d-flex align-items-end justify-content-around">
+                    <button  type="submit" class="btn btn-info" style=" margin-left: 100%;background-color: #33ff33 ;"></button>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

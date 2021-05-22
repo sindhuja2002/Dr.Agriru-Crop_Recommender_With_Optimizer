@@ -1,0 +1,37 @@
+  
+body {
+    background-color: #57f862;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2 rem;
+    font-weight: bold;
+}
+.button {
+        
+    border-radius: 12px;
+    
+    
+    background-color: #035b08; 
+      border: none;
+      color:#8eed95;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      margin: 4px 2px;
+      cursor: pointer;
+      }
+      hr.line {
+        height: 10px;
+    border: 1;
+    box-shadow: inset 0 9px 9px -3px rgba(0, 255, 0, 0.8);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+      }
+     

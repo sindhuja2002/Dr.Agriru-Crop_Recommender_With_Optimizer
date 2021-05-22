@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href={{url_for('static',filename='result.css')}}>
+    <title>CROP RECOMENDER</title>
+</head>
+
+<body>
+    <h1 style="text-align: center; font-size: 3 rem; font-weight: bolder">MANGO TREE</h1>
+    <table style = "width : 100%">
+    <div class="rainyimg">
+       <tr><td> <img src="../static/mango_pic.jpg" alt="MANGO  IMAGE" style="height: 400px; width: 400px;"></td>
+    </div>
+    <div>
+      <td><h2> Mango grows well on wide variety of soils, such as lateritic,
+            alluvial, sandy loam and sandy.The loamy, alluvial, well-drained, aerated and deep soils (2-2.5 m) rich
+            in organic matter ideal for mango cultivation. The water table should be
+            around 3 m and soils with high water table are unsuitable for mango. </h2></td>
+   </div>
+   </tr></table>
+   <hr class="line">
+   <div style="text-align: center;">
+<button class="button " onclick="myFunction()">ANALYSE</button>
+   </div>
+<script>
+    function myFunction() {
+      location.replace("/analiser")
+    }
+    </script>
+    </body>
+</html>

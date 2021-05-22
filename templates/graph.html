@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+
+
+<style>
+  
+
+    h1 {
+    text-align: center;
+    font-family: Comic Sans;
+    font-size: 30px;
+    color: #000;
+  }
+   
+    td {
+        height: 20px;
+  vertical-align: center;
+  text-align: center;
+}
+    </style>
+    
+</head>
+
+ <body style = "background-color: #57f862;">
+  <h1 >{{header}}</h1>
+  <div id="chart" class="chart"></div>
+</body>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+  var graphs = {{ graphJSON |safe }};
+  Plotly.plot('chart',graphs);
+
+</script>
+<h1 style="text-align: center;">REQUIREMENT TABLE</h1>
+<table  >
+
+<style>
+    table.GeneratedTable {
+      width: 60%;
+      background-color: #c8ebc7;
+    border-collapse: separate;
+      border-width: 2px;
+      border-color: #035b08;
+      border-style: double;
+      color:#000;
+      margin-left: auto;
+    margin-right: auto;
+    }
+    
+    table.GeneratedTable td, table.GeneratedTable th {
+      border-width: 2px;
+      border-color: #035b08 ;
+      border-style: double;
+      padding: 3px;
+      
+    }
+    
+    table.GeneratedTable thead {
+      background-color: #999999;
+    }
+    </style>
+    
+    
+    <table class="GeneratedTable">
+      <thead>
+        <tr>
+          
+          <th>CONTENTS</th>
+          <th>REQUIRED AMOUNT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          
+          <td>NITROGEN RATIO</td>
+          <td id='N'></td>
+        </tr>
+        <tr>
+          
+          <td>PHOSPOURS RATIO</td>
+          <td id='P'></td>
+        </tr>
+        <tr >
+          
+          <td>POTASSIUM RATIO</td>
+          <td id='K'></td>
+        </tr>
+        <tr>
+          
+          <td>CALCIUM (t/ha)</td>
+          <td id='ca'></td>
+        </tr>
+        <tr>
+          
+          <td>MAGNESIUM (t/ha)</td>
+          <td id='mg'></td>
+        </tr>
+        <tr>
+        
+          <td>SULPHUR (t/ha)</td>
+          <td id ='s'></td>
+        </tr>
+        <tr>
+        
+          <td>BORON (t/ha)</td>
+          <td id = 'b'></td>
+        </tr>
+        <tr>
+        
+          <td>IRON (t/ha)</td>
+          <td id= 'fe'></td>
+        </tr>
+        <tr>
+        
+          <td>ZINC (t/ha)</td>
+          <td id= 'zn'></td>
+        </tr>
+        <tr>
+          
+          <td>MANGANESE (t/ha)</td>
+          <td id ='mn'></td>
+        </tr>
+        <tr>
+          
+          <td>PH</td>
+          <td id='ph'></td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <script>
+        var person = {{required}};
+
+        document.getElementById("N").innerHTML =person[0];
+        document.getElementById("P").innerHTML =person[1];
+        document.getElementById("K").innerHTML =person[2];
+        document.getElementById("ca").innerHTML =person[3];
+        document.getElementById("mg").innerHTML =person[4];
+        document.getElementById("s").innerHTML =person[5];
+        document.getElementById("b").innerHTML =person[6];
+        document.getElementById("fe").innerHTML =person[7];
+        document.getElementById("zn").innerHTML =person[8];
+        document.getElementById("mn").innerHTML =person[9];
+        document.getElementById("ph").innerHTML =person[10];
+        
+
+        </script>
+    
+    
+</html>

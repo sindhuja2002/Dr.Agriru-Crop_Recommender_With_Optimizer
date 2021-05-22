@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href={{url_for('static',filename='result.css')}}>
+    <title>Maize crop</title>
+</head>
+
+<body>
+    <h1 style="text-align: center; font-size: 3 rem; font-weight: bolder"><u>MAIZE CROP</u></h1>
+    <table style = "width : 100%">
+    <div class="rainyimg">
+       <tr><td><img src="../static/maize_pic.jpeg" alt="MAIZE IMAGE" style="height: 400px; width: 400px;"></td>
+    </div>
+    
+    <div>
+        <td><h2> Maize can be grown in all types of soil.<br> But for good growth and productivity of maize, loam and medium to heavy soil having adequate amount of bacteria and proper drainage is suitable.</h2></td>
+   </div>
+   </tr></table>
+   <hr class="line">
+   <div style="text-align: center;">
+<button class="button " onclick="myFunction()">ANALYSE</button>
+</div>
+<script>
+    function myFunction() {
+      location.replace("/analiser")
+    }
+    </script>
+    </body>
+</html>

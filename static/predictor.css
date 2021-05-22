@@ -1,0 +1,80 @@
+body {
+    background-color: #57f862;
+    font-family: 'Poppins', sans-serif;
+}
+.form {
+    background-color: white;
+    width: 70vw;
+    margin: 50px auto;
+    padding: 20px 50px;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+    border-radius: 12px;
+}
+.form h1 {
+    font-family: 'Abril Fatface', cursive;
+    color:#008000;
+}
+
+.btn {
+
+    
+    align-content: center;
+    padding: 20px 60px;
+    font-size: 18px; 
+    background-image: url("Predict.jpg");
+    background-size: cover;
+    border: black;
+
+}
+.btn:hover{
+    box-shadow:
+    0 16.3px 11.4px rgba(0, 0, 0, 0.25),
+    0 28.7px 38.2px rgba(0, 0, 0, 0.21),
+    0 69px 171px rgba(0, 0, 0, 0.239);
+    transform: scale(1.2);
+
+}
+.btn::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.175rem;
+    left: 0;
+    bottom: 0;
+    background: black;
+    
+    
+}
+.btn-info::after{
+    transform: scale(0,1); 
+    
+}
+
+.btn-info:hover::after{
+    transform: scale(1,1);
+    transition: transform 0.3s ease;
+    
+
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 3px solid green; 
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 0px;
+  }
+hr.separate {
+    
+    height: 10px;
+border: 1;
+box-shadow: inset 0 9px 9px -3px rgba(0, 255, 0, 0.8);
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+  }
